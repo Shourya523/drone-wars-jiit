@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Button } from "@/components/ui/Button";
 
 export function Hero() {
   return (
@@ -66,7 +65,7 @@ export function Hero() {
                 National Drone Championship
               </p>
               <p className="text-white/70 font-mono text-[9px] md:text-xs uppercase tracking-[0.15em]">
-                Jaypee Institute of Information Technology, Noida
+                Jaypee Institute of Information Technology Sector-128, Noida
               </p>
             </div>
 
@@ -90,25 +89,50 @@ export function Hero() {
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.4, duration: 0.6 }}
-            className="flex flex-col items-center gap-2 md:gap-3"
+            className="flex flex-col items-center gap-4 md:gap-6"
           >
-            <div className="text-center text-[8px] md:text-[10px] font-mono tracking-[0.25em] uppercase text-white/50">
-              Register Now For The Championship
+            <div className="flex flex-col items-center gap-2">
+              <div className="text-center text-[10px] md:text-sm font-orbitron font-bold tracking-[0.2em] text-primary">
+                ₹8 LAKHS PRIZE POOL
+              </div>
+              <div className="text-center text-[8px] md:text-[10px] font-mono tracking-[0.25em] uppercase text-white/50">
+                Register Now For The Championship
+              </div>
             </div>
-            <motion.button
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.98 }}
-              onClick={() => document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' })}
-              className="relative group overflow-hidden px-8 md:px-12 py-2.5 md:py-3 bg-gradient-to-r from-primary to-accent text-black font-orbitron font-bold text-xs md:text-sm tracking-[0.15em] uppercase shadow-[0_0_30px_rgba(0,240,255,0.4)] hover:shadow-[0_0_50px_rgba(0,240,255,0.6)] transition-all duration-300"
-            >
-              <span className="relative z-10">Enter Arena</span>
-              <motion.div
-                className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20"
-                initial={false}
-              />
-            </motion.button>
-            <div className="text-[8px] font-mono tracking-[0.15em] uppercase text-white/40">
-              Limited Slots Available
+            
+            <div className="flex flex-col md:flex-row items-center gap-4 md:gap-6">
+              <motion.button
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => document.getElementById('events')?.scrollIntoView({ behavior: 'smooth' })}
+                className="relative group overflow-hidden px-8 md:px-10 py-2.5 md:py-3 border border-primary/50 text-white font-orbitron font-bold text-[10px] md:text-xs tracking-[0.15em] uppercase transition-all duration-300 hover:bg-primary/10"
+              >
+                <span className="relative z-10">Enter Arena</span>
+              </motion.button>
+
+              <motion.a
+                href="https://forms.gle/b8jASHzNe18d8t4GA"
+                target="_blank"
+                rel="noopener noreferrer"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.98 }}
+                className="relative group overflow-hidden px-10 md:px-14 py-2.5 md:py-3 bg-gradient-to-r from-primary to-accent text-black font-orbitron font-bold text-[10px] md:text-xs tracking-[0.15em] uppercase shadow-[0_0_30px_rgba(0,240,255,0.4)] hover:shadow-[0_0_50px_rgba(0,240,255,0.6)] transition-all duration-300 flex items-center justify-center min-w-[180px]"
+              >
+                <span className="relative z-10">Register Now</span>
+                <motion.div
+                  className="absolute inset-0 bg-white opacity-0 group-hover:opacity-20"
+                  initial={false}
+                />
+              </motion.a>
+            </div>
+
+            <div className="flex flex-col items-center gap-1">
+              <div className="text-[9px] md:text-[11px] font-mono tracking-[0.15em] uppercase text-accent font-bold">
+                Last date to register: 15th April
+              </div>
+              <div className="text-[8px] font-mono tracking-[0.15em] uppercase text-white/40 italic">
+                *Limited Slots Online
+              </div>
             </div>
           </motion.div>
         </div>

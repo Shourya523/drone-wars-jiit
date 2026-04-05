@@ -38,44 +38,27 @@ export function Prizes() {
           <div className="mx-auto mt-4 h-px w-52 bg-gradient-to-r from-transparent via-[#ff4d00]/70 to-transparent" />
         </motion.div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-7xl mx-auto mb-8">
-          {/* Top 3 */}
-          {[
-            { id: "01", title: "FPV RACING", prize: "2 LAKHS", flagship: true },
-            { id: "02", title: "PAYLOAD DELIVERY", prize: "1.6 LAKHS" },
-            { id: "03", title: "AUTONOMOUS MISSION", prize: "1.6 LAKHS" }
-          ].map((event) => (
-            <Card key={event.id} className={`p-10 border-none h-[300px] flex flex-col justify-center items-center relative overflow-hidden transition-all duration-300 hover:bg-white/5 group bg-[#080812] ${event.flagship ? "col-span-1 md:col-span-2 lg:col-span-1 border-t-2 border-t-[#00f0ff] shadow-[0_0_26px_rgba(0,240,255,0.12)]" : "border-t border-white/5"}`}>
-              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-[radial-gradient(circle_at_top,rgba(255,77,0,0.14),transparent_48%)]" />
-              <div className="absolute top-0 right-0 p-4 font-mono text-white/5 text-2xl font-bold group-hover:text-white/10 transition-colors">[{event.id}]</div>
-              <div className="relative z-10 text-center">
-                <h3 className={`font-orbitron font-bold mb-4 uppercase tracking-[0.2em] ${event.flagship ? "text-2xl text-[#00f0ff] text-shadow-[0_0_10px_#00f0ff]" : "text-xl text-white/70"}`}>{event.title}</h3>
-                <p className={`font-mono font-black tracking-tighter ${event.flagship ? "text-5xl text-white" : "text-4xl text-white/90"}`}>₹{event.prize}</p>
-                {event.flagship && (
-                  <div className="mt-6 px-4 py-1.5 bg-[#00f0ff]/5 border border-[#00f0ff]/20 text-[#00f0ff] text-[10px] font-mono uppercase tracking-[0.3em] inline-block">Flagship Arena</div>
-                )}
-              </div>
-              <div className="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-            </Card>
-          ))}
-        </div>
-
-        {/* Bottom 2 - Centered */}
-        <div className="flex flex-wrap justify-center gap-8 max-w-7xl mx-auto">
-          {[
-            { id: "04", title: "OBSTACLE NAVIGATION", prize: "1.2 LAKHS" },
-            { id: "05", title: "DRONE DESIGN", prize: "1.2 LAKHS" }
-          ].map((event) => (
-            <Card key={event.id} className="w-full md:w-[calc(50%-16px)] lg:w-[calc(33.33%-22px)] p-10 border-none h-[280px] flex flex-col justify-center items-center relative overflow-hidden transition-all hover:bg-white/5 group bg-[#080812] border-t border-white/5">
-              <div className="absolute top-0 right-0 p-4 font-mono text-white/5 text-2xl font-bold group-hover:text-white/10 transition-colors">[{event.id}]</div>
-              <div className="relative z-10 text-center">
-                <h3 className="text-xl font-orbitron font-bold text-white/70 mb-4 uppercase tracking-[0.2em]">{event.title}</h3>
-                <p className="text-3xl text-white/90 font-mono font-black tracking-tighter">₹{event.prize}</p>
-              </div>
-              <div className="absolute inset-x-0 bottom-0 h-[1px] bg-gradient-to-r from-transparent via-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-            </Card>
-          ))}
-        </div>
+        <motion.div
+          initial={{ opacity: 0, scale: 0.95 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+          className="max-w-4xl mx-auto p-12 border border-white/5 bg-[#080812] relative overflow-hidden group rounded-2xl"
+        >
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(0,240,255,0.05),transparent_70%)]" />
+          <div className="relative z-10">
+            <h3 className="font-orbitron font-bold text-white/50 text-sm md:text-base mb-6 tracking-[0.3em] uppercase">
+              Championship Status
+            </h3>
+            <div className="flex flex-col gap-4 text-left md:text-center items-center">
+              <div className="h-px w-24 bg-gradient-to-r from-transparent via-primary to-transparent mb-4" />
+              <p className="text-white/70 font-mono text-xs md:text-sm leading-relaxed max-w-2xl uppercase tracking-widest">
+                The National Drone Championship features 5 high-stakes arenas where pilots compete for glory and substantial rewards. Focus on technical excellence and precision maneuvering to claim your share of the massive prize pool.
+              </p>
+              <div className="h-px w-24 bg-gradient-to-r from-transparent via-primary to-transparent mt-4" />
+            </div>
+          </div>
+        </motion.div>
       </div>
     </section>
   );
