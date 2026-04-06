@@ -72,7 +72,7 @@ export function BrochurePopup() {
                     <div>
                       <p className="text-[10px] md:text-xs font-mono tracking-[0.3em] uppercase text-[#00f0ff] mb-1">DronoWar 2026</p>
                       <h1 className="text-3xl md:text-5xl font-orbitron font-black uppercase leading-[0.95] tracking-[0.12em] text-white">
-                        Dronowar
+                        DRON-O-WAR 1.0
                       </h1>
                       <p className="text-xs md:text-sm text-[#9ff8ff] font-mono tracking-[0.08em] uppercase">
                         Jaypee Institute of Information Technology

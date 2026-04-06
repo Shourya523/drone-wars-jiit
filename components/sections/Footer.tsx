@@ -14,7 +14,7 @@ export function Footer() {
           <div className="mb-5 inline-flex items-center gap-3 rounded-full border border-[#00f0ff]/35 bg-[linear-gradient(90deg,rgba(0,240,255,0.14),rgba(255,122,66,0.14))] px-5 py-2 shadow-[0_0_26px_rgba(0,240,255,0.12)]">
             <span className="h-2 w-2 rounded-full bg-[#00f0ff] shadow-[0_0_12px_rgba(0,240,255,0.9)]" />
             <p className="text-[11px] sm:text-xs font-orbitron uppercase tracking-[0.28em] text-transparent bg-clip-text bg-[linear-gradient(90deg,#00f0ff_0%,#9dfbe3_45%,#ff9f66_100%)]">
-              In Association With
+              DRON-O-WAR 1.0
             </p>
             <span className="h-2 w-2 rounded-full bg-[#ff8a4b] shadow-[0_0_12px_rgba(255,138,75,0.9)]" />
           </div>
@@ -49,7 +49,7 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-4 gap-12 font-sans mb-12">
           <div className="md:col-span-2">
             <Link href="#" className="inline-block mb-6">
-              <span className="text-3xl font-orbitron font-bold uppercase tracking-widest text-white">DRONO<span className="text-[#00f0ff] ml-1">WAR</span></span>
+              <span className="text-3xl font-orbitron font-bold uppercase tracking-widest text-white">DRON-O-<span className="text-[#00f0ff] ml-1">WAR 1.0</span></span>
             </Link>
             <p className="text-white/60 text-sm max-w-sm leading-relaxed font-mono">
               National Drone Championship hosting multiple
@@ -75,14 +75,14 @@ export function Footer() {
             <h4 className="text-[#ffd0b3] font-orbitron font-bold tracking-widest mb-6">CONTACT</h4>
             <ul className="space-y-3 text-[#ffc9ad]/85 text-sm">
               <li>contact@dronotics.in</li>
-              <li>Yasharth Singh: +91 8448173449</li>
               <li className="whitespace-nowrap">Vaibhav Katariya: +91 9876543210</li>
-              <li className="pt-4 flex gap-4">
+              <li>Yasharth Singh: +91 8448173449</li>
+              {/* <li className="pt-4 flex gap-4">
                 <a href="#" aria-label="Twitter" title="Twitter" className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#ff8a4b]/20 flex items-center justify-center transition-colors border border-white/10 hover:border-[#ff8a4b]/50 text-white hover:text-[#ffb07d]"><Twitter size={18} /></a>
                 <a href="#" aria-label="LinkedIn" title="LinkedIn" className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#ff8a4b]/20 flex items-center justify-center transition-colors border border-white/10 hover:border-[#ff8a4b]/50 text-white hover:text-[#ffb07d]"><Linkedin size={18} /></a>
                 <a href="#" aria-label="Instagram" title="Instagram" className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#ff8a4b]/20 flex items-center justify-center transition-colors border border-white/10 hover:border-[#ff8a4b]/50 text-white hover:text-[#ffb07d]"><Instagram size={18} /></a>
                 <a href="#" aria-label="YouTube" title="YouTube" className="w-10 h-10 rounded-full bg-white/5 hover:bg-[#ff8a4b]/20 flex items-center justify-center transition-colors border border-white/10 hover:border-[#ff8a4b]/50 text-white hover:text-[#ffb07d]"><Youtube size={18} /></a>
-              </li>
+              </li> */}
             </ul>
           </div>
         </div>
