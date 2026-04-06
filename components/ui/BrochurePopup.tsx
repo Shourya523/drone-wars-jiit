@@ -8,7 +8,7 @@ import { events } from "@/lib/events";
 
 export function BrochurePopup() {
   const [open, setOpen] = useState(false);
-  const featuredEvents = events.slice(0, 4);
+  const featuredEvents = events.slice(0, 5);
 
   useEffect(() => {
     const timer = window.setTimeout(() => setOpen(true), 320);
@@ -74,9 +74,6 @@ export function BrochurePopup() {
                       <h1 className="text-3xl md:text-5xl font-orbitron font-black uppercase leading-[0.95] tracking-[0.12em] text-white">
                         Dronowar
                       </h1>
-                      <p className="mt-1 text-[10px] md:text-xs font-mono tracking-[0.16em] uppercase text-white/65">
-                        In association with
-                      </p>
                       <p className="text-xs md:text-sm text-[#9ff8ff] font-mono tracking-[0.08em] uppercase">
                         Jaypee Institute of Information Technology
                       </p>

@@ -113,11 +113,11 @@ export const events: Event[] = [
         }
     },
     {
-        slug: "obstacle-navigation",
-        title: "Obstacle Navigation Challenge",
+        slug: "RC Plane ",
+        title: "RC Plane",
         date: "May 2, 2026",
         location: "JIIT Wish Town Campus",
-        description: "Focus on precise manual control. Guide your drone through challenging sequences like circular rings, staggered poles, and narrow corridors.",
+        description: " ",
         image: "https://images.unsplash.com/photo-1506947411487-a56738267384?q=80&w=1000&auto=format&fit=crop",
         color: "yellow",
         category: "COMPETITION",
@@ -135,7 +135,7 @@ export const events: Event[] = [
         },
         timeline: {
             day1: [
-                { time: "11:30 - 13:00", activity: "Obstacle Navigation Challenge" }
+                { time: "11:30 - 13:00", activity: "RC Plane" }
             ]
         }
     },

@@ -36,7 +36,7 @@ export function Hero() {
               className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl font-orbitron font-black text-white tracking-widest leading-tight"
             >
               <span className="relative inline-block whitespace-nowrap">
-                DRON-O-WAR
+                DRON-O-WAR 1.0
                 <motion.div
                   initial={{ width: 0 }}
                   animate={{ width: "100%" }}

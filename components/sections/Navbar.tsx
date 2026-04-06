@@ -50,10 +50,10 @@ export function Navbar() {
 
             <div className="min-w-0">
               <span className="block text-xl md:text-2xl font-orbitron font-bold uppercase tracking-[0.2em] text-white leading-tight whitespace-nowrap">
-                DRONO<span className="text-primary ml-1">WAR</span>
+                DRON-O-<span className="text-primary ml-1">WAR 1.0</span>
               </span>
               <span className="hidden sm:block text-[10px] md:text-xs font-mono tracking-[0.16em] uppercase text-white/65 whitespace-nowrap">
-                In Association With <span className="text-[#00f0ff]">Jaypee Institute Of Information Technology</span>
+                <span className="text-[#00f0ff]">Jaypee Institute Of Information Technology</span>
               </span>
             </div>
           </Link>
