@@ -5,6 +5,7 @@ export interface Event {
     location: string;
     description: string;
     longDescription?: string;
+    eligibilityNote?: string;
     image: string;
     color: string;
     category: "COMPETITION" | "EXHIBITION" | "TECHNICAL" | "ENTREPRENEURIAL" | "MISCELLANEOUS";
@@ -24,11 +25,40 @@ export interface Event {
 
 export const events: Event[] = [
     {
+        slug: "drone-maneuvering",
+        title: "Drone Maneuvering Challenge",
+        date: "May 2, 2026",
+        location: "JIIT Noida Campus",
+        description: "Manual control challenge focused on sharp turns, hovering precision, and obstacle weaving.",
+        longDescription: "A high-precision manual piloting event designed to evaluate smooth handling, throttle discipline, and control under pressure. Participants must complete a maneuvering course featuring tight gates, hover checkpoints, and directional transitions.\n\nEligibility: This event is strictly open to JIIT Noida students only. Valid JIIT Noida student ID verification will be required during registration and reporting.",
+        eligibilityNote: "JIIT Noida Students Only",
+        image: "/event-obstacle-navigation.jpg",
+        color: "primary",
+        category: "COMPETITION",
+        skillsTested: [
+            "Fine-grained throttle and yaw control",
+            "Precision hover stability",
+            "Tight-course maneuvering",
+            "Consistent lap execution"
+        ],
+        prizePool: {
+            total: "80,000",
+            first: "40,000",
+            second: "25,000",
+            third: "15,000"
+        },
+        timeline: {
+            day1: [
+                { time: "13:30 - 15:00", activity: "Drone Maneuvering Challenge" }
+            ]
+        }
+    },
+    {
         slug: "fpv-racing",
         title: "FPV Racing Championship",
         date: "May 2-3, 2026",
         location: "JIIT Wish Town Campus",
-        description: "Fpv will be racing event with obstacles for both drone with goggles and LOS \n\nShortest leap time will be recorded",
+        description: "Pilots control high-performance racing drones using first-person-view (FPV) goggles. Navigate a high-speed race track with precision control and obstacle avoidance.",
         longDescription: "An FPV Drone Racing Challenge is a high-intensity competition that puts a pilot's ability to the test as they navigate their drone through a fast-paced obstacle course. The event is crafted to showcase precision in control, rapid decision-making, agility, spatial awareness, and sharp reflexes in dynamic, real-world racing conditions.\n\nTo ensure fairness and technical merit, only custom-built multi-rotor drones are allowed. Ready-to-Fly (RTF) commercially purchased drones are strictly prohibited.",
         image: "/event-fpv-racing.jpg",
         color: "primary",
@@ -40,10 +70,10 @@ export const events: Event[] = [
             "Race strategy and consistency"
         ],
         prizePool: {
-            total: "TBD",
-            first: "TBD",
-            second: "TBD",
-            third: "TBD"
+            total: "2,00,000",
+            first: "1,00,000",
+            second: "60,000",
+            third: "40,000"
         },
         timeline: {
             day1: [
@@ -71,10 +101,10 @@ export const events: Event[] = [
             "System integration"
         ],
         prizePool: {
-            total: "TBD",
-            first: "TBD",
-            second: "TBD",
-            third: "TBD"
+            total: "1,60,000",
+            first: "80,000",
+            second: "50,000",
+            third: "30,000"
         },
         timeline: {
             day1: [
@@ -101,10 +131,10 @@ export const events: Event[] = [
             "Precision landing accuracy"
         ],
         prizePool: {
-            total: "TBD",
-            first: "TBD",
-            second: "TBD",
-            third: "TBD"
+            total: "1,60,000",
+            first: "80,000",
+            second: "50,000",
+            third: "30,000"
         },
         timeline: {
             day2: [
@@ -113,12 +143,12 @@ export const events: Event[] = [
         }
     },
     {
-        slug: "RC Plane ",
-        title: "RC Plane",
+        slug: "obstacle-navigation",
+        title: "Obstacle Navigation Challenge",
         date: "May 2, 2026",
         location: "JIIT Wish Town Campus",
         description: "Focus on precise manual control. Guide your drone through challenging sequences like circular rings, staggered poles, and narrow corridors.",
-        image: "/event-obstacle-navigation.jpg",
+        image: "/obstacle-navigation.jpg",
         color: "yellow",
         category: "COMPETITION",
         skillsTested: [
@@ -128,14 +158,14 @@ export const events: Event[] = [
             "Precision landing capability"
         ],
         prizePool: {
-            total: "TBD",
-            first: "TBD",
-            second: "TBD",
-            third: "TBD"
+            total: "1,20,000",
+            first: "60,000",
+            second: "40,000",
+            third: "20,000"
         },
         timeline: {
             day1: [
-                { time: "11:30 - 13:00", activity: "RC Plane" }
+                { time: "11:30 - 13:00", activity: "Obstacle Navigation Challenge" }
             ]
         }
     },
@@ -155,10 +185,11 @@ export const events: Event[] = [
             "Presentation and technical communication"
         ],
         prizePool: {
-            total: "TBD",
-            first: "TBD",
-            second: "TBD",
-            third: "TBD"
+            total: "1,20,000",
+            first: "50,000",
+            second: "30,000",
+            third: "20,000",
+            other: "Best Innovation Award: 40,000"
         },
         timeline: {
             day1: [
