@@ -1,12 +1,12 @@
 "use client";
 
 import { AnimatePresence, motion } from "framer-motion";
-import { TrashIcon, CheckCircle } from "lucide-react";
+import { CheckCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 
 export function CacheCleanButton() {
   const [showAlert, setShowAlert] = useState(false);
-  const [isClearing, setIsClearing] = useState(false);
+  const [, setIsClearing] = useState(false);
 
   const clearCache = async (showReload = true) => {
     setIsClearing(true);
@@ -55,34 +55,15 @@ export function CacheCleanButton() {
   };
 
   useEffect(() => {
-    const autoClearFlag = "dronowars-cache-auto-cleared";
-
-    if (typeof window === "undefined" || window.name.includes(autoClearFlag)) {
-      return;
-    }
-
     const timer = window.setTimeout(() => {
-      window.name = `${window.name}|${autoClearFlag}`;
       void clearCache(false);
-    }, 1200);
+    }, 500);
 
     return () => window.clearTimeout(timer);
   }, []);
 
   return (
     <>
-      {/* Floating Cache Clear Button */}
-      <motion.button
-        onClick={() => void clearCache(true)}
-        disabled={isClearing}
-        whileHover={{ scale: 1.1 }}
-        whileTap={{ scale: 0.95 }}
-        className="fixed bottom-5 left-5 z-[95] inline-flex items-center gap-2 border-2 border-orange-500/45 bg-[linear-gradient(145deg,rgba(255,122,66,0.2),rgba(200,80,40,0.15))] px-4 py-2.5 text-xs font-orbitron tracking-[0.18em] uppercase text-[#ffb380] shadow-[0_0_24px_rgba(255,122,66,0.2)] transition-all hover:border-orange-500/70 hover:text-white hover:shadow-[0_0_30px_rgba(255,122,66,0.35)] disabled:opacity-70"
-      >
-        <TrashIcon className="h-4 w-4" />
-        {isClearing ? "Clearing..." : "Clear Cache"}
-      </motion.button>
-
       {/* Success Alert */}
       <AnimatePresence>
         {showAlert && (
