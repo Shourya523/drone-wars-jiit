@@ -130,12 +130,6 @@ export function ContactUs() {
             transition={{ duration: 0.55 }}
             className="text-center mb-4"
           >
-            <p className="text-[10px] md:text-xs tracking-[0.35em] font-mono text-[#ff4d00]/80 uppercase mb-3">
-              Direct Communication
-            </p>
-            <h2 className="text-2xl md:text-3xl font-orbitron font-black tracking-[0.08em] text-white uppercase">
-              Event Coordinators
-            </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-3 max-w-5xl mx-auto">

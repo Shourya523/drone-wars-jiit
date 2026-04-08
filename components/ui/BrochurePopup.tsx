@@ -17,7 +17,6 @@ export function BrochurePopup() {
     "payload-delivery",
     "autonomous-mission",
     "obstacle-navigation",
-    "drone-design",
   ];
   const featuredEvents = featuredEventSlugs
     .map((slug) => events.find((event) => event.slug === slug))
@@ -125,17 +124,17 @@ export function BrochurePopup() {
                       />
                     </div>
                     <div>
-                      <p className="text-[10px] md:text-xs font-mono tracking-[0.3em] uppercase text-transparent bg-clip-text bg-[linear-gradient(90deg,#00f0ff_0%,#8fffe2_52%,#ff9b66_100%)] mb-1 drop-shadow-[0_0_12px_rgba(0,240,255,0.2)]">
+                      <p className="text-[10px] md:text-xs font-mono tracking-[0.3em] uppercase text-[#00f0ff] mb-1">
                         DRONO-O-WAR 1.0
                       </p>
-                      <h1 className="whitespace-nowrap text-[clamp(1.1rem,3.8vw,3.2rem)] font-orbitron font-black uppercase leading-none tracking-[0.08em] text-transparent bg-clip-text bg-[linear-gradient(90deg,#e8feff_0%,#00f0ff_38%,#8fffe2_68%,#ff9b66_100%)] drop-shadow-[0_0_14px_rgba(0,240,255,0.18)]">
+                      <h1 className="whitespace-nowrap text-[clamp(1.1rem,3.8vw,3.2rem)] font-orbitron font-black uppercase leading-none tracking-[0.08em] text-transparent bg-clip-text bg-[linear-gradient(90deg,#00f0ff_0%,#e8feff_50%,#ff9b66_100%)]">
                         DRONO-O-WAR 1.0
                       </h1>
-                      <p className="mt-1 text-[10px] md:text-xs font-mono tracking-[0.16em] uppercase text-white/65">
-                        In association with
+                      <p className="mt-1 text-[10px] md:text-xs font-mono tracking-[0.16em] uppercase text-white/50">
+                        IN ASSOCIATION WITH
                       </p>
-                      <p className="text-xs md:text-sm text-[#9ff8ff] font-mono tracking-[0.08em] uppercase">
-                        Jaypee Institute of Information Technology
+                      <p className="text-xs md:text-sm text-[#00f0ff] font-mono tracking-[0.12em] uppercase">
+                        JAYPEE INSTITUTE OF INFORMATION TECHNOLOGY
                       </p>
                     </div>
                   </div>
@@ -193,10 +192,7 @@ export function BrochurePopup() {
                   <p className="text-[10px] font-mono tracking-[0.24em] uppercase text-[#00f0ff] mb-3">Events</p>
                   <div className="space-y-2">
                     {featuredEvents.map((event) => (
-                      <div
-                        key={event.slug}
-                        className={`border border-white/15 bg-black/30 px-3 py-2 text-[11px] text-white/85 font-mono uppercase tracking-[0.12em] ${event.slug === "obstacle-navigation" ? "whitespace-nowrap text-[10px] md:text-[11px]" : ""}`}
-                      >
+                      <div key={event.slug} className="border border-white/15 bg-black/30 px-3 py-2 text-[11px] text-white/85 font-mono uppercase tracking-[0.12em]">
                         {event.title}
                       </div>
                     ))}

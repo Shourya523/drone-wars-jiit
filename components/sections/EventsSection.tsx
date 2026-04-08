@@ -12,9 +12,13 @@ const categories = ["ALL", "COMPETITION", "EXHIBITION"] as const;
 function EventPreviewCard({
   event,
   onSelect,
+  shouldAnimate,
+  index,
 }: {
   event: Event;
   onSelect: (event: Event) => void;
+  shouldAnimate: boolean;
+  index: number;
 }) {
   const [imageSrc, setImageSrc] = useState(event.image);
   const blurb = event.description.length > 74 ? `${event.description.slice(0, 74)}...` : event.description;
@@ -24,7 +28,11 @@ function EventPreviewCard({
   }, [event.image]);
 
   return (
-    <article
+    <motion.article
+      layout={shouldAnimate}
+      initial={shouldAnimate ? { opacity: 0, y: 30, scale: 0.98 } : false}
+      animate={shouldAnimate ? { opacity: 1, y: 0, scale: 1 } : undefined}
+      transition={shouldAnimate ? { duration: 0.48, delay: index * 0.08 } : undefined}
       className="group relative w-full aspect-[3/4] min-h-[440px] overflow-hidden rounded-[14px] border border-white/15 bg-[linear-gradient(155deg,#111421_0%,#090a11_48%,#050608_100%)] shadow-[0_20px_45px_rgba(0,0,0,0.55)] cursor-pointer"
       onClick={() => onSelect(event)}
     >
@@ -91,7 +99,7 @@ function EventPreviewCard({
           Reveal by 1st April, 2026
         </p>
       </div>
-    </article>
+    </motion.article>
   );
 }
 
@@ -157,22 +165,26 @@ export function EventsSection() {
 
         {/* Grid matching provided visual reference */}
         <div className="grid grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3 lg:gap-6 mb-6">
-          {filteredEvents.slice(0, 3).map((event) => (
+          {filteredEvents.slice(0, 3).map((event, index) => (
             <EventPreviewCard
               key={event.slug}
               event={event}
+              index={index}
               onSelect={setSelectedEvent}
+              shouldAnimate={shouldAnimate}
             />
           ))}
         </div>
 
         {/* Bottom rows for remaining cards */}
         <div className="mx-auto grid max-w-[1240px] grid-cols-1 gap-7 md:grid-cols-2 lg:grid-cols-3 md:gap-8">
-          {filteredEvents.slice(3).map((event) => (
+          {filteredEvents.slice(3).map((event, index) => (
             <EventPreviewCard
               key={event.slug}
               event={event}
+              index={index + 3}
               onSelect={setSelectedEvent}
+              shouldAnimate={shouldAnimate}
             />
           ))}
         </div>
