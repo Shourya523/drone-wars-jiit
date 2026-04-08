@@ -31,8 +31,8 @@ function EventPreviewCard({
     <motion.article
       layout={shouldAnimate}
       initial={shouldAnimate ? { opacity: 0, y: 30, scale: 0.98 } : false}
-      animate={shouldAnimate ? { opacity: 1, y: 0, scale: 1 } : undefined}
-      transition={shouldAnimate ? { duration: 0.48, delay: index * 0.08 } : undefined}
+      animate={{ opacity: 1, y: 0, scale: 1 }}
+      transition={shouldAnimate ? { duration: 0.48, delay: index * 0.08 } : { duration: 0 }}
       className="group relative w-full aspect-[3/4] min-h-[440px] overflow-hidden rounded-[14px] border border-white/15 bg-[linear-gradient(155deg,#111421_0%,#090a11_48%,#050608_100%)] shadow-[0_20px_45px_rgba(0,0,0,0.55)] cursor-pointer"
       onClick={() => onSelect(event)}
     >
