@@ -65,7 +65,6 @@ export function Footer() {
               <li><Link href="#" className="hover:text-[#00f0ff] transition-colors">Home</Link></li>
               <li><Link href="#events" className="hover:text-[#00f0ff] transition-colors">Events</Link></li>
               <li><Link href="#about" className="hover:text-[#00f0ff] transition-colors">About</Link></li>
-              <li><Link href="#faq" className="hover:text-[#00f0ff] transition-colors">FAQ</Link></li>
               <li><Link href="#contact" className="hover:text-[#00f0ff] transition-colors">Contact</Link></li>
               <li><Link href="#prizes" className="hover:text-[#00f0ff] transition-colors">Prizes</Link></li>
             </ul>
