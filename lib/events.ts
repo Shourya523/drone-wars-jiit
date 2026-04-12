@@ -30,37 +30,6 @@ export interface Event {
 
 export const events: Event[] = [
   {
-    slug: "drone-maneuvering",
-    title: "Drone Maneuvering Challenge",
-    date: "May 2, 2026",
-    location: "JIIT Noida Campus",
-    description:
-      "Manual control challenge focused on sharp turns, hovering precision, and obstacle weaving.",
-    longDescription:
-      "A high-precision manual piloting event designed to evaluate smooth handling, throttle discipline, and control under pressure. Participants must complete a maneuvering course featuring tight gates, hover checkpoints, and directional transitions.\n\nEligibility: This event is strictly open to JIIT Noida students only. Valid JIIT Noida student ID verification will be required during registration and reporting.",
-    eligibilityNote: "JIIT Noida Students Only",
-    image: "/event-obstacle-navigation.jpg",
-    color: "primary",
-    category: "COMPETITION",
-    skillsTested: [
-      "Fine-grained throttle and yaw control",
-      "Precision hover stability",
-      "Tight-course maneuvering",
-      "Consistent lap execution",
-    ],
-    prizePool: {
-      total: "80,000",
-      first: "40,000",
-      second: "25,000",
-      third: "15,000",
-    },
-    timeline: {
-      day1: [
-        { time: "13:30 - 15:00", activity: "Drone Maneuvering Challenge" },
-      ],
-    },
-  },
-  {
     slug: "fpv-racing",
     title: "FPV Racing Championship",
     date: "May 2-3, 2026",
