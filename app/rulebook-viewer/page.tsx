@@ -1,7 +1,8 @@
 "use client";
 import { useSearchParams, useRouter } from "next/navigation";
+import { Suspense } from "react";
 
-export default function RulebookViewerPage() {
+function RulebookContent() {
   const searchParams = useSearchParams();
   const router = useRouter();
   const pdf = searchParams.get("pdf");
@@ -50,5 +51,20 @@ export default function RulebookViewerPage() {
         </div>
       </div>
     </div>
+  );
+}
+
+export default function RulebookViewerPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white font-mono">
+        <div className="animate-pulse flex flex-col items-center">
+          <div className="w-12 h-12 border-4 border-[#ff4d00] border-t-transparent rounded-full animate-spin mb-4"></div>
+          <p className="tracking-widest">INITIALIZING SECURE LINK...</p>
+        </div>
+      </div>
+    }>
+      <RulebookContent />
+    </Suspense>
   );
 }
