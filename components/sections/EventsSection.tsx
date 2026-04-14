@@ -294,53 +294,57 @@ export function EventsSection() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.3 }}
-                className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-12 w-full mt-auto"
+                className="w-full flex flex-col md:flex-row gap-8 md:gap-10 mt-auto"
               >
-                {/* Visual Card */}
-                <div className="group relative aspect-[16/9] md:aspect-[21/9] lg:aspect-[16/9] rounded-3xl overflow-hidden border border-white/10 bg-[#050505] shadow-[0_20px_55px_rgba(0,0,0,0.45)]">
-                  <div className="absolute top-5 left-5 z-10 inline-flex items-center gap-2 border border-[#ff7a3d]/45 bg-[linear-gradient(125deg,rgba(255,122,61,0.32),rgba(255,122,61,0.12))] px-3 py-1 text-[10px] font-mono tracking-[0.18em] uppercase text-[#ffd4c0]">
-                    <span className="font-bold text-[#ff5f1f]">01</span>
-                    Focus Matrix
+                {/* Rulebook Square Box with Preview */}
+                <div className="group relative flex-1 min-w-[260px] max-w-[370px] aspect-square rounded-2xl overflow-hidden border border-[#ff4d00]/30 bg-[linear-gradient(145deg,rgba(255,77,0,0.10),rgba(0,240,255,0.08),rgba(10,12,20,0.96))] p-5 flex flex-col shadow-[0_8px_32px_rgba(255,77,0,0.10)] items-center justify-center">
+                  <div className="absolute top-3 left-3 z-10 inline-flex items-center gap-2 border border-[#ff4d00]/40 bg-[linear-gradient(125deg,rgba(255,77,0,0.18),rgba(255,77,0,0.08))] px-3 py-1 text-[10px] font-mono tracking-[0.18em] uppercase text-[#ffd4c0]">
+                    <span className="font-bold text-[#ff4d00]">01</span>
+                    Rulebook
                   </div>
-                  <img
-                    src={selectedEvent.image}
-                    alt={selectedEvent.title}
-                    loading="lazy"
-                    className="absolute inset-0 h-full w-full object-cover object-center transition-transform duration-700 group-hover:scale-105"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/45 via-black/12 to-transparent" />
-                  <div className="absolute inset-0 bg-[radial-gradient(circle_at_20%_10%,rgba(0,240,255,0.08),transparent_42%),radial-gradient(circle_at_85%_20%,rgba(255,77,0,0.1),transparent_40%)]" />
-                  <div className="absolute flex flex-col justify-end p-8 inset-0 z-10">
-                    <h3 className="font-mono text-xs md:text-sm tracking-[0.28em] text-[#c7f9ff] uppercase mb-3">Flight Skills Tested</h3>
-                    <ul className="space-y-2 font-sans text-sm md:text-[1.05rem] text-white/95 font-light">
-                      {selectedEvent.skillsTested.slice(0, 3).map((skill, i) => (
-                        <li key={i} className="flex items-center gap-3 rounded-lg bg-black/30 px-3 py-2 backdrop-blur-sm border border-white/10">
-                          <span className="h-1.5 w-1.5 rounded-full bg-[#ff6a2a] shadow-[0_0_10px_rgba(255,106,42,0.8)]" />
-                          {skill}
-                        </li>
-                      ))}
-                    </ul>
+                  <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_80%_10%,rgba(255,77,0,0.10),transparent_38%),radial-gradient(circle_at_10%_90%,rgba(0,240,255,0.07),transparent_40%)]" />
+                  <div className="flex flex-col items-center justify-center w-full h-full">
+                    <FileText size={38} className="text-[#ff4d00] mb-2" />
+                    <div className="font-mono text-xs md:text-sm text-white/80 mb-2 text-center">
+                      {selectedEvent.rulebookPdf ? 'Rulebook PDF available' : 'Rulebook coming soon!'}
+                    </div>
+                    {selectedEvent.rulebookPdf && (
+                      <div className="w-full h-16 overflow-hidden rounded bg-black/30 border border-white/10 flex items-center justify-center mb-2">
+                        <iframe
+                          src={selectedEvent.rulebookPdf + '#toolbar=0&navpanes=0&scrollbar=0'}
+                          title="Rulebook Preview"
+                          className="w-full h-full"
+                          style={{ minHeight: '64px', maxHeight: '64px', pointerEvents: 'none' }}
+                          tabIndex={-1}
+                        />
+                      </div>
+                    )}
+                    {selectedEvent.rulebookPdf && (
+                      <button
+                        className="mt-1 px-4 py-1.5 rounded bg-[#ff4d00] text-white font-mono text-xs uppercase tracking-widest shadow hover:bg-[#ff7a3d] transition-colors"
+                        onClick={() => {
+                          window.location.href = `/rulebook-viewer?pdf=${encodeURIComponent(selectedEvent.rulebookPdf)}&title=${encodeURIComponent(selectedEvent.title)}`;
+                        }}
+                      >
+                        Expand PDF
+                      </button>
+                    )}
                   </div>
-                  <div className="pointer-events-none absolute inset-x-5 bottom-0 h-px bg-gradient-to-r from-transparent via-[#00f0ff]/70 to-transparent" />
                 </div>
 
-                {/* Timeline Card */}
-                <div className="group relative h-full min-h-[330px] rounded-3xl overflow-hidden border border-[#00f0ff]/20 bg-[linear-gradient(145deg,rgba(0,240,255,0.08),rgba(255,77,0,0.06),rgba(8,10,18,0.95))] p-6 md:p-8 flex flex-col shadow-[0_20px_55px_rgba(0,0,0,0.4)]">
-                  <div className="absolute top-5 left-5 z-10 inline-flex items-center gap-2 border border-[#00f0ff]/40 bg-[linear-gradient(125deg,rgba(0,240,255,0.24),rgba(0,240,255,0.1))] px-3 py-1 text-[10px] font-mono tracking-[0.18em] uppercase text-[#c8fcff]">
+                {/* Timeline Square Box */}
+                <div className="group relative flex-1 min-w-[260px] max-w-[370px] aspect-square rounded-2xl overflow-hidden border border-[#00f0ff]/20 bg-[linear-gradient(145deg,rgba(0,240,255,0.08),rgba(255,77,0,0.06),rgba(8,10,18,0.95))] p-5 flex flex-col shadow-[0_8px_32px_rgba(0,240,255,0.10)] items-center justify-center">
+                  <div className="absolute top-3 left-3 z-10 inline-flex items-center gap-2 border border-[#00f0ff]/40 bg-[linear-gradient(125deg,rgba(0,240,255,0.24),rgba(0,240,255,0.1))] px-3 py-1 text-[10px] font-mono tracking-[0.18em] uppercase text-[#c8fcff]">
                     <span className="font-bold text-[#00f0ff]">02</span>
                     Mission Timeline
                   </div>
                   <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_16%_12%,rgba(0,240,255,0.15),transparent_35%),radial-gradient(circle_at_90%_80%,rgba(255,77,0,0.12),transparent_45%)]" />
-                  <div className="pointer-events-none absolute inset-x-8 top-0 h-px bg-gradient-to-r from-transparent via-[#00f0ff]/70 to-transparent" />
-                  
-                  <div className="mt-9 flex-1">
-                    <div className="h-full rounded-2xl border border-white/15 bg-[linear-gradient(145deg,rgba(12,16,28,0.72),rgba(6,8,16,0.72))] p-3 md:p-4 backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.04)]">
+                  <div className="w-full h-full flex flex-col items-center justify-center mt-6">
+                    <div className="h-full w-full rounded-2xl border border-white/15 bg-[linear-gradient(145deg,rgba(12,16,28,0.72),rgba(6,8,16,0.72))] p-2 md:p-3 backdrop-blur-md shadow-[inset_0_1px_0_rgba(255,255,255,0.04)] overflow-y-auto">
                       <EventTimeline timeline={selectedEvent.timeline} />
                     </div>
                   </div>
-
                 </div>
-
               </motion.div>
             </div>
           </motion.div>
