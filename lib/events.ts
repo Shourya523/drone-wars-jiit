@@ -38,7 +38,7 @@ export const events: Event[] = [
     description:
       "Pilots control high-performance racing drones using first-person-view (FPV) goggles. Navigate a high-speed race track with precision control and obstacle avoidance.",
     longDescription:
-      "An FPV Drone Racing Challenge is a high-intensity competition that puts a pilot's ability to the test as they navigate their drone through a fast-paced obstacle course. The event is crafted to showcase precision in control, rapid decision-making, agility, spatial awareness, and sharp reflexes in dynamic, real-world racing conditions.\n\nTo ensure fairness and technical merit, only custom-built multi-rotor drones are allowed. Ready-to-Fly (RTF) commercially purchased drones are strictly prohibited.",
+      "This event challenges participants to design and operate high-performance FPV drones capable of navigating a predefined racing track consisting of gates, obstacles, and sharp turns in the minimum possible time.\n\nThe objective is to demonstrate precision control, agility, and speed while maintaining stability and consistency throughout multiple laps. Teams are expected to optimize their drone configuration and piloting skills to efficiently complete the course under competitive conditions.",
     image: "/event-fpv-racing.jpg",
     rulebookPdf: "/FPV rulebook DronoWar.pdf",
     color: "primary",
@@ -66,7 +66,7 @@ export const events: Event[] = [
     date: "May 2-3, 2026",
     location: "JIIT Wish Town Campus",
     description:
-      "Simulates real-world drone logistics. Navigate, visually identify the drop zone, and release payload accurately.",
+      "The Payload Delivery Mission simulates a real-world drone logistics challenge. Teams must navigate obstacles, transport a payload, and deliver it accurately to the target zone. The mission tests precision flying, stability under load, and safe landing capabilities. It reflects practical applications such as medical supply and disaster relief delivery.",
     image: "/event-payload-delivery.jpg",
     rulebookPdf: "/Payload rulebook DronoWar.pdf",
     color: "secondary",
@@ -95,7 +95,7 @@ export const events: Event[] = [
     date: "May 3, 2026",
     location: "JIIT Wish Town Campus",
     description:
-      "Program your drone to complete mission stages without human control: autonomous takeoff, navigation, marker detection, and precision landing.",
+      "The Autonomous Drone Mission is designed to test the ability of UAV systems to operate independently in structured environments. This competition focuses on developing drones that can perceive surroundings, process data, and execute precise movements without manual control. It reflects real-world applications such as surveillance, inspection, and smart navigation, where reliability, accuracy, and autonomy are essential.",
     image: "/event-autonomous-mission.jpg",
     rulebookPdf: "/Autonomous rulebook DronoWar.pdf",
     color: "accent",
@@ -122,7 +122,7 @@ export const events: Event[] = [
     date: "May 2, 2026",
     location: "JIIT Wish Town Campus",
     description:
-      "Design, build, and fly a radio-controlled aircraft to demonstrate engineering skill and flying precision. The challenge focuses on executing smooth takeoff, controlled aerial maneuvers, and achieving an accurate landing within a designated zone while maintaining stability and efficiency.",
+      "The RC Plane Challenge is designed to test participants’ skills in aircraft design, flight control, and maneuvering. Teams must build and operate a remote-controlled plane capable of stable flight, precise navigation, and accurate mission execution within the defined arena and challenge constraints.",
     image: "/obstacle-navigation.jpg",
     rulebookPdf: "/RC rulebook DronoWar.pdf",
     color: "yellow",
@@ -155,7 +155,7 @@ export const events: Event[] = [
     date: "May 2-3, 2026",
     location: "JIIT Wish Town Campus",
     description:
-      "Present a drone design or prototype demonstrating innovation, technical advancement, or a novel application. Focus on engineering creativity.",
+      "In a world driven by creativity and rapid technological evolution, Unmanned Aerial Vehicles (UAVs) have become platforms for both engineering precision and imaginative design. The Design & Innovation Challenge celebrates this fusion by encouraging participants to build drones beyond conventional norms, exploring unique structures, materials, and functionalities. It empowers innovators to transform bold ideas into tangible aerial systems that redefine performance, aesthetics, and technological possibilities.",
     image: "/event-drone-design.jpg",
     rulebookPdf: "/Design.pdf",
     color: "cyan",
