@@ -10,6 +10,7 @@ import { BackgroundGrid } from "@/components/ui/BackgroundGrid";
 import { ContactUs } from "@/components/sections/ContactUs";
 import { BrochurePopup } from "@/components/ui/BrochurePopup";
 import { CacheCleanButton } from "@/components/ui/CacheCleanButton";
+import { MeetTheDevelopers } from "@/components/sections/MeetTheDevelopers";
 
 export default function Home() {
   return (
@@ -19,7 +20,12 @@ export default function Home() {
       <BackgroundGrid />
       <Navbar />
       <Hero />
-      <HomeDeferredSections />
+      <AboutEvent />
+      <EventsSection />
+      <Prizes />
+      <MeetTheDevelopers />
+      <ContactUs />
+      <Footer />
     </main>
   );
 }
