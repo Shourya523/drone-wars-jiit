@@ -34,6 +34,29 @@ export function RegistrationCTA() {
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
+          transition={{ delay: 0.3 }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8 mb-10 px-6 py-4 rounded-xl border border-[#00f0ff]/30 bg-[#00f0ff]/5 backdrop-blur-sm relative group overflow-hidden"
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-transparent via-[#00f0ff]/10 to-transparent translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
+          
+          <div className="flex flex-col items-center">
+            <span className="text-[10px] md:text-sm font-mono tracking-[0.2em] uppercase text-[#00f0ff]/70 mb-1">REGISTRATION DEADLINE</span>
+            <span className="text-xl md:text-2xl font-orbitron font-black text-white drop-shadow-[0_0_10px_rgba(0,240,255,0.8)]">25TH APRIL</span>
+          </div>
+          
+          <div className="hidden sm:block w-px h-12 bg-white/20"></div>
+          <div className="sm:hidden w-full h-px bg-white/20"></div>
+          
+          <div className="flex flex-col items-center">
+            <span className="text-[10px] md:text-sm font-mono tracking-[0.2em] uppercase text-[#00f0ff]/70 mb-1">ABSTRACT DEADLINE</span>
+            <span className="text-xl md:text-2xl font-orbitron font-black text-[#00f0ff] drop-shadow-[0_0_10px_rgba(0,240,255,0.8)]">28TH APRIL</span>
+          </div>
+        </motion.div>
+
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
           transition={{ delay: 0.4 }}
           className="flex flex-col sm:flex-row justify-center gap-6"
         >

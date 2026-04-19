@@ -325,7 +325,7 @@ export function EventsSection() {
                         <button
                           className="mt-1 px-4 py-1.5 rounded bg-[#ff4d00] text-white font-mono text-xs uppercase tracking-widest shadow hover:bg-[#ff7a3d] transition-colors"
                           onClick={() => {
-                            window.location.href = `/rulebook-viewer?pdf=${encodeURIComponent(selectedEvent.rulebookPdf)}&title=${encodeURIComponent(selectedEvent.title)}`;
+                            window.location.href = `/rulebook-viewer?pdf=${encodeURIComponent(selectedEvent.rulebookPdf || "")}&title=${encodeURIComponent(selectedEvent.title)}`;
                           }}
                         >
                           Expand PDF

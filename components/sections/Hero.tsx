@@ -6,24 +6,12 @@ import { useEffect, useState } from "react";
 export function Hero() {
   const prefersReducedMotion = useReducedMotion();
   const [compactMode, setCompactMode] = useState(false);
-
-  useEffect(() => {
-    const mediaQuery = window.matchMedia("(max-width: 1024px), (pointer: coarse)");
-    const updateCompactMode = () => setCompactMode(mediaQuery.matches);
-
-    updateCompactMode();
-    mediaQuery.addEventListener("change", updateCompactMode);
-
-    return () => mediaQuery.removeEventListener("change", updateCompactMode);
-  }, []);
-
-  const allowLoopAnimations = false && !prefersReducedMotion && !compactMode;
+  const allowLoopAnimations = !prefersReducedMotion;
 
   return (
     <section className="relative h-screen md:h-[100dvh] flex items-center justify-center overflow-hidden">
-      <div className="container mx-auto px-4 z-10 w-full">
-        <div className="flex flex-col items-center text-center">
-          {/* Flight Protocol Badge */}
+      <div className="container mx-auto px-4 w-full relative z-[60]">
+        <div className="flex flex-col items-center text-center relative">
           <motion.div
             initial={{ opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
@@ -43,7 +31,6 @@ export function Hero() {
             Flight Protocol Active // 2026
           </motion.div>
 
-          {/* Main Title */}
           <div className="relative mb-4 md:mb-6 text-center w-full px-2">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
@@ -63,7 +50,6 @@ export function Hero() {
             </motion.h1>
           </div>
 
-          {/* Premium Event Details */}
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -72,7 +58,6 @@ export function Hero() {
           >
             <div className="w-[1px] h-4 md:h-6 bg-gradient-to-b from-transparent via-primary to-transparent" />
 
-            {/* Event Title */}
             <div className="text-center">
               <p className="text-[9px] md:text-xs font-mono uppercase tracking-[0.2em] md:tracking-[0.3em] text-primary mb-1 md:mb-2">
                 Official Event
@@ -85,7 +70,6 @@ export function Hero() {
               </p>
             </div>
 
-            {/* Date & Time Badge */}
             <motion.div
               animate={
                 allowLoopAnimations
@@ -122,13 +106,55 @@ export function Hero() {
             </motion.div>
           </motion.div>
 
-          {/* Premium Championship CTA */}
           <motion.div
             initial={{ opacity: 0, scale: 0.9 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ delay: 1.4, duration: 0.6 }}
             className="flex flex-col items-center gap-4 md:gap-6"
           >
+            <motion.div
+              animate={
+                allowLoopAnimations
+                  ? {
+                    boxShadow: [
+                      "0 0 15px rgba(244,63,94,0.4), inset 0 0 0px rgba(244,63,94,0)",
+                      "0 0 80px rgba(244,63,94,1), inset 0 0 25px rgba(244,63,94,0.6)",
+                      "0 0 15px rgba(244,63,94,0.4), inset 0 0 0px rgba(244,63,94,0)"
+                    ],
+                    scale: [1, 1.06, 1],
+                    borderColor: ["rgba(239,68,68,0.5)", "rgba(255,50,50,1)", "rgba(239,68,68,0.5)"]
+                  }
+                  : undefined
+              }
+              transition={allowLoopAnimations ? { duration: 1.2, repeat: Infinity, ease: "easeInOut" } : undefined}
+              className="relative group flex flex-col sm:flex-row items-center gap-3 sm:gap-6 px-5 py-3 md:px-8 md:py-4 rounded-xl border-2 border-red-500/60 bg-red-950/40 backdrop-blur-md mt-2 z-[60]"
+            >
+              <div className="absolute inset-0 rounded-xl bg-[linear-gradient(90deg,rgba(244,63,94,0.1)_0%,rgba(249,115,22,0.1)_50%,rgba(244,63,94,0.1)_100%)] opacity-100"></div>
+
+              <div className="flex items-center gap-2 relative z-10">
+                <span className="relative flex h-2.5 w-2.5 md:h-3 md:w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-red-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 md:h-3 md:w-3 bg-red-500 shadow-[0_0_10px_rgba(244,63,94,0.8)]"></span>
+                </span>
+                <span className="text-[10px] md:text-sm font-orbitron font-bold tracking-[0.15em] md:tracking-[0.2em] uppercase text-red-100">
+                  Registration Deadline <span className="text-white font-black text-red-400 drop-shadow-[0_0_12px_rgba(244,63,94,1)]">25th April</span>
+                </span>
+              </div>
+
+              <div className="hidden sm:block w-px h-6 bg-red-500/50"></div>
+              <div className="sm:hidden w-full h-px bg-red-500/50"></div>
+
+              <div className="flex items-center gap-2 relative z-10">
+                <span className="relative flex h-2.5 w-2.5 md:h-3 md:w-3">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-orange-400 opacity-75"></span>
+                  <span className="relative inline-flex rounded-full h-2.5 w-2.5 md:h-3 md:w-3 bg-orange-500 shadow-[0_0_10px_rgba(249,115,22,0.8)]"></span>
+                </span>
+                <span className="text-[10px] md:text-sm font-orbitron font-bold tracking-[0.15em] md:tracking-[0.2em] uppercase text-orange-100">
+                  Abstract Deadline: <span className="text-white font-black text-orange-400 drop-shadow-[0_0_12px_rgba(249,115,22,1)]">28th April</span>
+                </span>
+              </div>
+            </motion.div>
+
             <div className="flex flex-col sm:flex-row items-center gap-2.5">
               <motion.button
                 onClick={() => window.open("https://docs.google.com/forms/d/e/1FAIpQLScIvVbyRIGsxU_j0lq65Iq6iGgTuINPF_o8Ti9IqIUOnCwtaw/viewform?usp=dialog", "_blank", "noopener,noreferrer")}
@@ -158,12 +184,11 @@ export function Hero() {
         </div>
       </div>
 
-      {/* Side Decorative Elements */}
       <div className="absolute left-4 md:left-10 top-1/2 -translate-y-1/2 hidden lg:flex flex-col gap-12 opacity-20">
         {[...Array(2)].map((_, i) => (
           <div key={i} className="flex flex-col gap-1">
             <div className="w-6 h-[1px] bg-white" />
-            <div className="font-mono text-[7px] uppercase tracking-widest text-white/50">DATA_{i+1}</div>
+            <div className="font-mono text-[7px] uppercase tracking-widest text-white/50">DATA_{i + 1}</div>
           </div>
         ))}
       </div>

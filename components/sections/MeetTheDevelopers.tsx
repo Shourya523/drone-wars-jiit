@@ -42,13 +42,13 @@ const DEVELOPERS = [
     name: "Yasharth Singh",
     role: "Management Head",
     color: "color2",
-    img: "",
+    img: "/yasharth.webp",
   },
   {
     name: "Vaibhav Katariya",
     role: "Events Head",
     color: "color3",
-    img: "",
+    img: "/vaibhav.webp",
   },
   {
     name: "Rakshit Suneja",
@@ -60,25 +60,25 @@ const DEVELOPERS = [
     name: "Vardaan Saxena",
     role: "Web Developer",
     color: "color1",
-    img: "/uploads/vardaan.jpg",
+    img: "/vardaan.webp",
   },
   {
     name: "Shourya Singh",
     role: "Web Developer",
     color: "color2",
-    img: "/devs/web2.jpg",
+    img: "/shourya.webp",
   },
   {
     name: "Ansh Mahajan",
     role: "Web Developer",
     color: "color3",
-    img: "/devs/web3.jpg",
+    img: "/ansh.webp",
   },
   {
-    name: "Shreshta Gupta",
+    name: "Shreshtha Gupta",
     role: "Automation Developer",
     color: "color4",
-    img: "",
+    img: "/shreshta.webp",
   },
 ];
 
@@ -96,13 +96,13 @@ export function MeetTheDevelopers() {
       ? DEVELOPERS
       : filter === "leads"
         ? DEVELOPERS.filter((dev) =>
-            [
-              "Outreach Head",
-              "Management Head",
-              "Events Head",
-              "Creative Head"
-            ].includes(dev.role)
-          )
+          [
+            "Outreach Head",
+            "Management Head",
+            "Events Head",
+            "Creative Head"
+          ].includes(dev.role)
+        )
         : DEVELOPERS.filter((dev) => dev.role === filter);
 
   return (
@@ -125,11 +125,10 @@ export function MeetTheDevelopers() {
               key={f.value}
               whileHover={{ scale: 1.08 }}
               whileTap={{ scale: 0.96 }}
-              className={`px-6 py-2 rounded-full font-bold font-mono text-base uppercase tracking-widest border-2 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#00f0ff]/60 ${
-                filter === f.value
+              className={`px-6 py-2 rounded-full font-bold font-mono text-base uppercase tracking-widest border-2 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-[#00f0ff]/60 ${filter === f.value
                   ? "bg-[#00f0ff] text-black border-[#00f0ff] shadow-lg"
                   : "bg-black/60 text-[#00f0ff] border-[#00f0ff]/40 hover:bg-[#00f0ff]/10"
-              }`}
+                }`}
               onClick={() => setFilter(f.value)}
             >
               {f.label}
@@ -138,7 +137,7 @@ export function MeetTheDevelopers() {
         </div>
         <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-8 w-full max-w-5xl">
           {filtered.map((dev, idx) => {
-            const color = ROLE_COLORS[dev.color] || ROLE_COLORS["color1"];
+            const color = ROLE_COLORS[dev.color as keyof typeof ROLE_COLORS] || ROLE_COLORS["color1"];
             return (
               <motion.div
                 key={dev.name}
