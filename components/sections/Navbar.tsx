@@ -29,7 +29,7 @@ export function Navbar() {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 border-b border-white/30 ${isScrolled ? "bg-background/80 backdrop-blur-md" : "bg-transparent"}`}
+      className={`fixed top-0 left-0 right-0 z-100 transition-all duration-300 border-b border-white/30 ${isScrolled ? "bg-background/80 backdrop-blur-md" : "bg-transparent"}`}
     >
       <div className="w-full px-3 sm:px-4 lg:px-6 xl:px-8">
         <div className="flex items-center justify-between h-20">
@@ -75,7 +75,7 @@ export function Navbar() {
       </div>
 
       {isOpen && (
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, scaleY: 0 }}
           animate={{ opacity: 1, scaleY: 1 }}
           className="md:hidden absolute top-20 left-0 right-0 bg-background/95 backdrop-blur-lg border-b border-white/10 origin-top p-4 flex flex-col gap-4"
