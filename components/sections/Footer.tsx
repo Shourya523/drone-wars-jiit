@@ -109,7 +109,14 @@ export function Footer() {
                 Ansh Mahajan
               </a>
               <span className="text-white/60">|</span>
-              <span className="text-transparent bg-clip-text bg-[linear-gradient(90deg,#00f0ff_0%,#7fffe8_45%,#ff9f66_100%)]">Shourya Singh</span>
+              <a
+                href="https://www.linkedin.com/in/shourya-singh-297297358/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-transparent bg-clip-text bg-[linear-gradient(90deg,#00f0ff_0%,#7fffe8_45%,#ff9f66_100%)] hover:brightness-125 transition"
+              >
+                Shourya Singh
+              </a>
               <span className="text-white/60">|</span>
               <a
                 href="https://www.linkedin.com/in/vardaan-saxena-b4b4a4365/"
