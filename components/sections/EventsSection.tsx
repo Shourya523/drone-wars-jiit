@@ -87,13 +87,12 @@ function EventPreviewCard({
         <div className="mt-4 flex items-center gap-3">
           {event.rulebookPdf ? (
             <a
-              href={encodeURI(event.rulebookPdf || "")}
+              href={encodeURI(event.rulebookPdf)}
               target="_blank"
               rel="noopener noreferrer"
               onClick={(eventClick) => eventClick.stopPropagation()}
               className="inline-flex items-center gap-2 border border-white/20 bg-black/35 px-3 py-1.5 font-mono text-[9px] uppercase tracking-[0.18em] text-white/85 transition-colors duration-300 group-hover:bg-white/10"
               aria-label={`Open ${event.title} rulebook PDF`}
-              
             >
               <FileText size={12} />
               Rulebook
@@ -111,7 +110,7 @@ function EventPreviewCard({
         </div>
 
         <p className="mt-2 font-mono text-[9px] uppercase tracking-[0.14em] text-white/55">
-          Reveal by 1st April, 2026
+          Reveal by 25th April, 2026
         </p>
       </div>
     </motion.article>
@@ -326,7 +325,7 @@ export function EventsSection() {
                         <button
                           className="mt-1 px-4 py-1.5 rounded bg-[#ff4d00] text-white font-mono text-xs uppercase tracking-widest shadow hover:bg-[#ff7a3d] transition-colors"
                           onClick={() => {
-                            window.location.href = `/rulebook-viewer?pdf=${encodeURIComponent(selectedEvent.rulebookPdf!)}&title=${encodeURIComponent(selectedEvent.title)}`;
+                            window.location.href = `/rulebook-viewer?pdf=${encodeURIComponent(selectedEvent.rulebookPdf)}&title=${encodeURIComponent(selectedEvent.title)}`;
                           }}
                         >
                           Expand PDF
